@@ -1,0 +1,92 @@
+<!-- Details Grid Table Section -->
+<h5 class="text-primary-700 font-weight-normal mb-3">{{pageHeader}}</h5>
+<div class="_details-wrapper">
+    <table class="_details-table table border border-secondary-200">
+        <thead>
+            <tr class="text-primary-600">
+                <th data-cy="detailsPriorityTitle">
+                    Priority
+                </th>
+                <th data-cy="detailsLoanNumberTitle">
+                    Loan Number
+                </th>
+                <th data-cy="detailsAssignedToUserTitle">
+                    Assigned To
+                </th>
+                <th data-cy="detailsBorrowerNameTitle">
+                    Borrower Name
+                </th>
+                <th data-cy="detailsActivityStatusTitle">
+                    Activity Status
+                </th>
+                <th data-cy="detailsCurrentStatusDateTitle">
+                    Current Status Date
+                </th>
+                <th data-cy="detailsLockExpirationDateTitle">
+                    Lock Expiration
+                </th>
+                <th data-cy="detailsEstimatedClosingDateTitle">
+                    Closing Date
+                </th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let detail of skillsDetail?.loanDetails" (mouseleave)="onMouseLeave()">
+                <td data-cy="priority" class="text-center">
+                    <i *ngIf="detail?.priority"
+                        class="fas fa-shipping-fast text-warning _rush-icon fa-fw position-relative">
+                        <div class="_rush-tooltip tooltip bs-tooltip-top" role="tooltip">
+                            <div class="arrow"></div>
+                            <div class="tooltip-inner bg-primary-400">Rush</div>
+                        </div>
+                    </i>
+                    &nbsp;
+                </td>
+                <td data-cy="loanNumber">
+                    {{ detail?.loanNumber }}
+                </td>
+                <td data-cy="assignedToUser">
+                    {{ detail?.assignedToUser }}
+                </td>
+                <td data-cy="borrowerName">
+                    {{ detail?.borrowerName }}
+                </td>
+                <td data-cy="activityStatus">
+                    {{ detail?.activityStatus }}
+                </td>
+                <td data-cy="currentStatusDate">
+                    {{
+                    convertUTCDateToLocalDate(detail?.currentStatusDate)
+                    | date: "MM/dd/yyyy"
+                }}
+                </td>
+                <td data-cy="lockExpirationDate">
+                    {{
+                    convertUTCDateToLocalDate(detail?.lockExpirationDate)
+                    | date: "MM/dd/yyyy"
+                }}
+                </td>
+                <td data-cy="estimatedClosingDate">
+                    {{
+                    convertUTCDateToLocalDate(detail?.estimatedClosingDate)
+                    | date: "MM/dd/yyyy"
+                }}
+                </td>
+                <td>
+                    <div ngbDropdown class="d-inline-block" placement="bottom-right bottom" data-cy="unassigndropDown">
+                        <div class="btn-group dropleft pull-right _expanded-menu-button">
+                            <button type="button" class="btn btn-light rounded" (click)="onClickOpenDropdown($event)">
+                                <i class="fas fa-ellipsis-h fa-fw pointer-none"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" (click)="unassignLoan(detail?.loanId)"
+                                    href="javascript:undefined;">Unassign Work</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+    </table>
+</div>

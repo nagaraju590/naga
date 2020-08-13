@@ -1,0 +1,19 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main {
+  flex: 1;
+}
+
+.C-main-content-row {
+  ._left-nav {
+    flex: 0 0 223px;
+    max-width: 223px;
+    height: calc(100vh - 52px);
+
+    background: var(--primary-100);
+  }
+}

@@ -1,0 +1,25 @@
+<div class="app">
+  <!-- Header -->
+  <h2od-common-primary-header (loanSearchNavigate)="loanSearchNavigate()" (helpDeskNavigate)="helpDeskNavigate()"
+    [showSearchBtn]="true" [showReturnToDashboardBtn]="false" (returnToDashboardNavigate)="returnToDashboardNavigate()"
+    [showReturnToActivityBtn]="false" (allRegsNavigate)="allRegsNavigate()" [showAllRegsLink]="showAllRegsLink">
+  </h2od-common-primary-header>
+  <!--/. Header -->
+
+  <div class="C-main-content-row row no-gutters">
+
+    <div class="_left-nav col-2">
+      <!-- Left Navbar -->
+      <h2od-manager-left-nav></h2od-manager-left-nav>
+      <!--/. Left Navbar -->
+    </div>
+
+    <!-- Main -->
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- Main -->
+
+  </div>
+
+</div>

@@ -1,0 +1,19 @@
+<h3>Okta API Token</h3>
+<div id="authToken">
+  <button class="btn btn-outline-info"
+          ngxClipboard
+          [cbContent]="token"
+          id="btnCopyTokenAuthToken">
+    Copy Token
+  </button>
+  <button class="btn btn-outline-info"
+          ngxClipboard
+          [cbContent]="'Bearer ' + token"
+          id="btnCopyBearerTokenAuthToken">
+    Copy Bearer Token
+  </button>
+  <hr>
+  <pre>{{ token }}</pre>
+  <hr>
+  <pre>Bearer {{ token }}</pre>
+</div>

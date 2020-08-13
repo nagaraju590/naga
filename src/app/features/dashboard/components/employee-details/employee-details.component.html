@@ -1,0 +1,57 @@
+<div class="C-employee-details pt-3">
+  <div class="row no-gutters">
+    <h5 class="col text-primary-700 font-weight-normal">{{ employeeName }}</h5>
+
+    <div class="col">
+      <select
+        class="form-control w-auto"
+        data-cy="CategorySelection"
+        (change)="openModal(switchCategoryModal); addTitle($event)"
+      >
+        <option
+          *ngFor="let category of categories"
+          [selected]="primaryCategory"
+          data-cy="CategoryOption"
+          >{{ category?.displayName }}
+          <div *ngIf="category.isPrimary">(Primary)</div>
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Switch Category Modal -->
+<ng-template #switchCategoryModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      {{ SelectedCategoryName }}
+    </h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h2o-digital-skill></h2o-digital-skill>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.dismiss('Cancel click')"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>

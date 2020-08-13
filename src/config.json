@@ -1,0 +1,18 @@
+{
+  "caliberServicesBaseUrl": "__OriginationBaseURL__",
+  "originationBaseUrl": "__OriginationApiBaseUrl__",
+  "h2oUrl": "__H2ODigitalH2OUrl__",
+  "cdnBaseUrl": "__CdnURL__",
+  "OKTA": {
+    "issuer": "__OktaIssuer__",
+    "redirectUri": "__H2ODMgrRedirectURI__",
+    "clientId": "__H2ODMgrOktaClient__",
+    "scopes": ["openid", "profile", "email"],
+    "responseType": ["code"]
+  },
+  "appInsight": {
+    "instrumentationKey": "__H2ODMgrInstrumentationKey__",
+    "enableAutoRouteTracking": false
+  },
+  "helpDeskUrl": "__H2OHelpDeskUrl__"
+}

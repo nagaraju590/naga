@@ -1,0 +1,19 @@
+<div class="_summary p-3 position-relative">
+  <a [href]="postClosingDashboardLink" data-cy="summary-dashboardBtn"
+    class="float-right btn btn-info position-relative _close-button">
+    Post Closing Dashboard
+  </a>
+  <!-- Table Section -->
+  <div class="_table-section pt-3">
+    <app-summary-all-skills [summaryAllSkills]="summaryTable">
+    </app-summary-all-skills>
+
+      <app-employee-info-grid
+        [employees]="employees"
+        (setUserAvailability)="onSetUserAvailability($event)"
+      >
+      </app-employee-info-grid>
+    <!-- /.Table Section -->
+  </div>
+  <!-- /.Table Section -->
+</div>

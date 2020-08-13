@@ -1,0 +1,35 @@
+@import "settings.scss";
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .btn:focus {
+    outline: 0 !important;
+  }
+
+  // General Layout Fix
+  .app .main {
+    flex: none !important;
+  }
+
+  // Logo
+  .app .header .logo img.logo__image {
+    margin-top: 5px;
+    height: 54px;
+  }
+
+  // Loan Card Fix
+  .loan-card img.loan-card__image {
+    height: 150px;
+  }
+
+  // Footer Fix
+  .footer {
+    position: relative;
+    border-bottom: 2px solid $black-blue;
+
+    .container {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

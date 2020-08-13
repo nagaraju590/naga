@@ -1,0 +1,56 @@
+.C-left-nav {
+  ._head {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem 0.75rem 2.25rem;
+    position: relative;
+
+    &.selected {
+      background: var(--light);
+      &:after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        background: var(--info);
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+      }
+    }
+  }
+
+  ._queue-list {
+    /* Display & Box Model */
+    height: calc(100vh - 92px);
+    padding-left: 0;
+    overflow-y: auto;
+
+    /* Text */
+    font-size: 0.875rem;
+    // font-size: 14px;
+
+    /* Other */
+    list-style-type: none;
+
+    .queue-item {
+      padding: 0.75rem 1.5rem 0.75rem 2.25rem;
+      position: relative; 
+
+
+      &.selected {
+        background: var(--light);
+        
+        &:after {
+          content: ' ';
+          display: block;
+          position: absolute;
+          background: var(--info);
+          top: 0;
+          left: 0;
+          width: 4px;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

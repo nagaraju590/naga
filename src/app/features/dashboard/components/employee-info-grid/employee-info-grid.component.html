@@ -1,0 +1,47 @@
+<h5 class="text-primary-700 font-weight-normal mb-3">Employee Information</h5>
+<table class="_employee-info-table table border border-secondary-200">
+  <thead>
+    <tr class="text-primary-600">
+      <th>
+        Employee Name
+        <!-- <i class="fas fa-sort fa-fw text-secondary"></i> -->
+      </th>
+      <th>
+        Skill Level
+      </th>
+      <th class="text-right">
+        Current Queue
+      </th>
+      <th class="actions-column">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees" (mouseleave)="onMouseLeave()">
+      <td>
+        <i *ngIf="!employee.isAvailable" class="_unavailable-icon fas fa-user-slash fa-fw position-relative"
+          [attr.data-cy-userAvailabilityIcon]="employee.userId">
+          <div class="tooltip bs-tooltip-top" role="tooltip">
+            <div class="arrow"></div>
+            <div class="tooltip-inner bg-primary-400">
+              Unavailable for work
+            </div>
+          </div>
+        </i>
+        <a [routerLink]="['/employee', employee.userId ]"> {{ employee.employeeName }}</a>
+      </td>
+      <td>{{ employee.skillLevel }}</td>
+      <td class="text-right">{{ employee.currentQueueCount }}</td>
+      <td class="actions-column">
+        <div class="btn-group dropleft pull-right _expanded-menu-button">
+          <button type="button" class="btn btn-light rounded" (click)="onClickOpenDropdown($event)">
+            <i class="fas fa-ellipsis-h fa-fw pointer-none"></i>
+          </button>
+          <div class="dropdown-menu" (click)="onClickAvailability(employee)">
+            <a *ngIf="!employee.isAvailable" class="dropdown-item" href="javascript:undefined;">Mark as Available</a>
+            <a *ngIf="employee.isAvailable" class="dropdown-item" href="javascript:undefined;">Mark as Unavailable</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

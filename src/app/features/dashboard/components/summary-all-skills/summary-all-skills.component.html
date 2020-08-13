@@ -1,0 +1,83 @@
+<h5 class="text-primary-700 font-weight-normal mb-3">
+  Queue Summary - All Skills
+</h5>
+<table class="table border border-secondary-200 _queue-summary-table">
+  <thead>
+    <tr class="text-primary-600">
+      <th data-cy="summarySkillLevelTitle">
+        Skill Level
+      </th>
+      <th class="text-right" data-cy="summaryUnassignedTitle">
+        Unassigned
+      </th>
+      <th class="text-right" data-cy="summaryAssignedTitle">
+        Assigned
+      </th>
+      <th class="text-right" data-cy="summaryInProgressTitle">
+        In Progress
+        <i
+          class="_in-progress-icon fas fa-info-circle fa-fw text-info cursor-pointer position-relative"
+        >
+          <div
+            class="_in-progress-tooltip tooltip bs-tooltip-top"
+            role="tooltip"
+          >
+            <div class="arrow"></div>
+            <div class="tooltip-inner bg-primary-400">
+              Activities being actively worked on
+            </div>
+          </div>
+        </i>
+      </th>
+      <th class="text-right" data-cy="summaryDailyTargetTitle">
+        Daily Target
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let skill of summaryAllSkills?.queueSummary">
+      <td data-cy="skillName">
+        <a
+          class="queue-item font-weight-semibold clearfix text-primary d-block"
+          [routerLink]="['/detail/', skill?.skillId]"
+        >
+          <span
+            data-cy="skillName"
+            [attr.data-cy-manager-skill-name]="skill?.skillName"
+          >
+            {{ skill?.skillName }}
+          </span>
+        </a>
+      </td>
+      <td class="text-right" data-cy="unAssignedCount">
+        {{ skill?.unAssignedCount }}
+      </td>
+      <td class="text-right" data-cy="assignedCount">
+        {{ skill?.assignedCount }}
+      </td>
+      <td class="text-right" data-cy="inProgressCount">
+        {{ skill?.inProgressCount }}
+      </td>
+      <td class="text-right" data-cy="dailyTargetCount">
+        {{ skill?.dailyTargetCount }}
+      </td>
+    </tr>
+    <tr class="_total bg-secondary-100">
+      <td data-cy="total">
+        Total
+      </td>
+      <td class="text-right" data-cy="totalUnAssignedCount">
+        {{ summaryAllSkills?.totalUnAssignedCount }}
+      </td>
+      <td class="text-right" data-cy="totalAssignedCount">
+        {{ summaryAllSkills?.totalAssignedCount }}
+      </td>
+      <td class="text-right" data-cy="totalInProgressCount">
+        {{ summaryAllSkills?.totalInProgressCount }}
+      </td>
+      <td class="text-right" data-cy="totalDailyTargetCount">
+        {{ summaryAllSkills?.totalDailyTargetCount }}
+      </td>
+    </tr>
+  </tbody>
+</table>

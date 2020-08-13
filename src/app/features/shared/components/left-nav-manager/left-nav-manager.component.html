@@ -1,0 +1,22 @@
+<!-- Left Nav Manager Bar -->
+<nav class="C-left-nav">
+  <div class="_head font-weight-semibold text-primary" [class.selected]="isCurrentRoute()">
+    <a href="javascript:undefined" (click)="onClickSummary()">
+      <span data-cy="summary">
+        Summary
+      </span>
+    </a>
+  </div>
+  <ol class="_queue-list mb-0">
+    <li *ngFor="let queueSummary of queueSummarys" class="clearfix" data-cy="manager-skills">
+      <a href="javascript:undefined" (click)="onClickSkill(queueSummary)"
+        class="queue-item font-weight-semibold clearfix text-primary d-block"
+        [class.selected]="isCurrentRoute(queueSummary.skillId)">
+        <span data-cy="displayName" [attr.data-cy-manager-skill-name]="queueSummary?.skillName">
+          {{ queueSummary?.skillName }}
+        </span>
+      </a>
+    </li>
+  </ol>
+</nav>
+<!--/. Manager Left Nav Bar -->

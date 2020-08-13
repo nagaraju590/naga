@@ -1,0 +1,18 @@
+{
+  "caliberServicesBaseUrl": "https://dev-services.caliberhomeloans.com",
+  "originationBaseUrl": "http://cnvqabacuss18:15001",
+  "h2oUrl": "https://cnvqabacuss18",
+  "cdnBaseUrl": "http://localhost:8888",
+  "OKTA": {
+    "issuer": "https://devauth.caliberhomeloans.com/oauth2/default",
+    "redirectUri": "http://localhost:4200/implicit/callback",
+    "clientId": "0oasu0h6kiFKxUWq90h7",
+    "scopes": ["openid", "profile", "email"],
+    "responseType": ["code"]
+  },
+  "appInsight": {
+    "instrumentationKey": "96a104b8-f6c9-44c7-8a43-ab211c882c90",
+    "enableAutoRouteTracking": false
+  },
+  "helpDeskUrl": "https://www.caliberchat.com/1/visitor/window/?code_id=4&amp;dl="
+}

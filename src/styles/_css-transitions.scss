@@ -1,0 +1,28 @@
+// TODO: Reuse
+.-slow-transition {
+  -webkit-transition: 0.45s ease-out;
+  -moz-transition: 0.45s ease-out;
+  -o-transition: 0.45s ease-out;
+  transition: 0.45s ease-out;
+}
+
+.-medium-transition {
+  -webkit-transition: 0.25s ease-out;
+  -moz-transition: 0.25s ease-out;
+  -o-transition: 0.25s ease-out;
+  transition: 0.25s ease-out;
+}
+
+.-fast-transition {
+  -webkit-transition: 0.1s ease-out;
+  -moz-transition: 0.1s ease-out;
+  -o-transition: 0.1s ease-out;
+  transition: 0.1s ease-out;
+}
+
+.-tab-footer-transition {
+  -webkit-transition: left 0.2s ease;
+  -moz-transition: left 0.2s ease;
+  -o-transition: left 0.2s ease;
+  transition: left 0.2s ease;
+}
